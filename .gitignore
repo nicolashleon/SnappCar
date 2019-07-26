@@ -60,3 +60,7 @@ Pods/
 
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
+
+
+contents.xcworkspacedata
+IDEWorkspaceChecks.plist
