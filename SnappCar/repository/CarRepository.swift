@@ -13,7 +13,7 @@ import RxSwift
 class CarRepository {
     private let networkProvider : CarDataProvider = NetworkCarDataProvider()
     
-    func searchCars(_ withCountry: Country, _ sortingBy: Sorting, _ ascendingResults: Bool, _ limitResultsTo: Int, _ offset: Int) {
+    func searchCars() {
         
         //TODO Call the network provider or database provider and return the data using the UI models instead of the data ones.
     }
