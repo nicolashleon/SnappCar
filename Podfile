@@ -7,6 +7,10 @@ target 'SnappCar' do
 
   # Pods for SnappCar
 
+  pod 'RxAlamofire', '~> 5.0'
+  pod 'RxSwift',    '~> 5.0'
+  pod 'RxCocoa',    '~> 5.0'
+
   target 'SnappCarTests' do
     inherit! :search_paths
     # Pods for testing
