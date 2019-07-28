@@ -24,8 +24,6 @@ class CarItemCell : UITableViewCell {
     
     @IBOutlet weak var ratingView: CosmosView?
     
-    @IBOutlet weak var reviewCountLabel: UILabel?
-    
     @IBOutlet weak var priceLabel: UILabel?
     
     override func prepareForReuse() {

@@ -31,14 +31,14 @@ class CarItemAdapter : NSObject, UITableViewDelegate, UITableViewDataSource {
         cell.locationLabel?.text = carItem.location
         
         cell.ratingView?.isHidden = false
+        
         if let rating = carItem.rating {
             cell.ratingView?.rating = rating
+            cell.ratingView?.text = "\((String(carItem.reviewCount)))"
         } else {
             cell.ratingView?.isHidden = true
         }
         
-        cell.reviewCountLabel?.text = String(carItem.reviewCount)
-
         return cell
     }
     
