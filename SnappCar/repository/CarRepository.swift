@@ -11,10 +11,22 @@
 import RxSwift
 
 class CarRepository {
+    
     private let networkProvider : CarDataProvider = NetworkCarDataProvider()
     
-    func searchCars() {
+    func searchCars(_ withCountry: Country, _ sortingBy: Sorting, _ ascendingResults: Bool, _ limitResultsTo: Int, _ offset: Int) -> Observable<CarItem> {
         
-        //TODO Call the network provider or database provider and return the data using the UI models instead of the data ones.
+        return networkProvider.searchCars(withCountry.abbreviation(), sortingBy.rawValue, ascendingResults, limitResultsTo, offset).map { (result : CarQueryResult) -> [Result] in
+                guard let results = result.results else {
+                    return [Result]()
+                }
+                return results
+            }
+            .flatMap { (results : [Result]) -> Observable<Result> in
+                return Observable.from(results)
+            }
+            .map { (result : Result) -> CarItem in
+                return result.toCarItem()
+            }
     }
 }

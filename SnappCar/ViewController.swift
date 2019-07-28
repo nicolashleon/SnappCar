@@ -7,14 +7,29 @@
 //
 
 import UIKit
+import RxSwift
 
-class ViewController: UIViewController {
-
+class ViewController : UIViewController {
+    
+    private let viewModel = SearchViewModel()
+    private var disposable : Disposable?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //TODO Add tableview delegates to populate the data
+        viewModel.searchCars(.NETHERLANDS, .recommended, true, 10, 0)
+            .subscribe(onNext: { (carItem : CarItem) in
+                print(carItem)
+            }, onError: { (error : Error) in
+                print(error)
+            }, onCompleted: {
+                print("Completed!")
+            })
     }
-
-
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        disposable?.dispose()
+    }
 }
 

@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 struct Car : Codable {
-	let reviewAvg : Int?
+	let reviewAvg : Double?
 	let fuelType : String?
 	let createdAt : String?
 	let ownerId : String?
@@ -47,7 +47,7 @@ struct Car : Codable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		reviewAvg = try values.decodeIfPresent(Int.self, forKey: .reviewAvg)
+		reviewAvg = try values.decodeIfPresent(Double.self, forKey: .reviewAvg)
 		fuelType = try values.decodeIfPresent(String.self, forKey: .fuelType)
 		createdAt = try values.decodeIfPresent(String.self, forKey: .createdAt)
 		ownerId = try values.decodeIfPresent(String.self, forKey: .ownerId)
@@ -56,7 +56,24 @@ struct Car : Codable {
 		make = try values.decodeIfPresent(String.self, forKey: .make)
 		gear = try values.decodeIfPresent(String.self, forKey: .gear)
 		bodyType = try values.decodeIfPresent(String.self, forKey: .bodyType)
-		model = try values.decodeIfPresent(String.self, forKey: .model)
+        
+        
+        var model : String?
+        do {
+            model = try values.decodeIfPresent(String.self, forKey: .model)
+        } catch {
+            print(error, "model is not a String")
+        }
+        
+        if(model == nil) {
+            do {
+                let intModel = try values.decodeIfPresent(Int.self, forKey: .model)
+                model = "\(String(describing: intModel))"
+            } catch {
+                print(error, "model is not an Int")
+            }
+        }
+        self.model = model
 		seats = try values.decodeIfPresent(Int.self, forKey: .seats)
 		allowed = try values.decodeIfPresent([String].self, forKey: .allowed)
 		accessories = try values.decodeIfPresent([String].self, forKey: .accessories)

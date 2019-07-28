@@ -9,5 +9,5 @@
 import RxSwift
 
 protocol CarDataProvider {
-    func searchCars(_ withCountry: String, _ sortingBy: String, _ ascendingResults: Bool, _ limitResultsTo: Int, _ offset: Int) -> Observable<Response<CarQueryResult>>
+    func searchCars(_ withCountry: String, _ sortingBy: String, _ ascendingResults: Bool, _ limitResultsTo: Int, _ offset: Int) -> Observable<CarQueryResult>
 }
