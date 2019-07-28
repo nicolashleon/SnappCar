@@ -6,7 +6,7 @@ target 'SnappCar' do
   use_frameworks!
 
   # Pods for SnappCar
-
+  pod 'AlamofireImage', '~> 3.5'
   pod 'RxAlamofire', '~> 5.0'
   pod 'RxSwift',    '~> 5.0'
   pod 'RxCocoa',    '~> 5.0'
