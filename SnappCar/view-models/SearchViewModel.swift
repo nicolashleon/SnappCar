@@ -20,7 +20,7 @@ class SearchViewModel {
             .observeOn(MainScheduler.instance)
             .subscribeOn(ConcurrentMainScheduler.instance)
     }
-    
+
     func searchCarsByPosition(_ lat : Double, _ lng : Double, _ sortingBy: Sorting, _ ascendingResults: Bool, _ limitResultsTo: Int, _ offset: Int) -> Observable<CarItem> {
         return Observable.empty()
     }

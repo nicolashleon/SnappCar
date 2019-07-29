@@ -112,4 +112,7 @@ class ViewController : UIViewController {
         queryCars(true)
     }
     
+    @IBAction func onCountryChanged(_ sender: UISegmentedControl) {
+        queryCars(true)
+    }
 }
