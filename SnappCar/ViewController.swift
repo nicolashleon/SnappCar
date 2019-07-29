@@ -9,8 +9,8 @@
 import UIKit
 import RxSwift
 
-class ViewController : UIViewController {
-    
+class ViewController : UIViewController, UITableViewDataSourcePrefetching {
+
     private let viewModel = SearchViewModel()
     private let carAdapter = CarItemAdapter()
     private var disposable : Disposable?
@@ -28,27 +28,36 @@ class ViewController : UIViewController {
         tableView.delegate = carAdapter
         tableView.dataSource = carAdapter
         tableView.addSubview(refreshControl)
+        tableView.prefetchDataSource = self
         refreshControl.addTarget(self, action: #selector(refreshCarList(_:)), for: .valueChanged)
-        queryCars()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         disposable?.dispose()
     }
     
-    private func queryCars() {
+    private func queryCars(_ forceRefresh : Bool = false) {
         
-        if !self.refreshControl.isRefreshing {
+        if !self.refreshControl.isRefreshing && forceRefresh {
             refreshControl.beginRefreshingManually()
         }
         
-        tableView.restore()
-        carAdapter.clear()
-        tableView.reloadData()
+        if forceRefresh {
+            tableView.restore()
+            carAdapter.clear()
+            tableView.reloadData()
+        }
+        
+        var resultLimit = 10
+        var offset = 0
+        
+        if !forceRefresh {
+            offset += carAdapter.count() + 10
+        }
         
         let sorting : Sorting = Sorting.allCases[sortingSegmentedControl.selectedSegmentIndex]
         
-        disposable = viewModel.searchCars(.NETHERLANDS, sorting, ascendingOrder, 10, 0)
+        disposable = viewModel.searchCars(.NETHERLANDS, sorting, ascendingOrder, resultLimit, offset)
             .subscribe(onNext: { [unowned self] (carItem : CarItem) in
                 self.addCar(carItem)
             }, onError: { [unowned self] (error : Error) in
@@ -68,7 +77,7 @@ class ViewController : UIViewController {
     }
     
     @objc private func refreshCarList(_ sender: Any) {
-        self.queryCars()
+        self.queryCars(true)
     }
     
     private func showEmptyState() {
@@ -85,11 +94,16 @@ class ViewController : UIViewController {
     }
     
     @IBAction func onSortingChanged(_ sender: UISegmentedControl) {
-        queryCars()
+        queryCars(true)
     }
     
     @IBAction func onOrderChanged(_ sender: Any) {
         ascendingOrder = !ascendingOrder
+        queryCars(true)
+    }
+    
+    //TODO Look for ways to improve the prefetch/paging mechanism
+    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         queryCars()
     }
     

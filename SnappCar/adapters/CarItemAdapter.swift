@@ -43,15 +43,19 @@ class CarItemAdapter : NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     
-    public func addCar(_ carItem : CarItem) {
+    func addCar(_ carItem : CarItem) {
         data.append(carItem)
     }
     
-    public func clear() {
+    func clear() {
         data.removeAll()
     }
     
-    public func isEmpty() -> Bool {
+    func isEmpty() -> Bool {
         return data.count == 0
+    }
+    
+    func count() -> Int {
+        return data.count
     }
 }
