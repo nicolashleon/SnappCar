@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class ViewController : UIViewController, UITableViewDataSourcePrefetching {
+class ViewController : UIViewController {
 
     private let viewModel = SearchViewModel()
     private let carAdapter = CarItemAdapter()
@@ -28,7 +28,6 @@ class ViewController : UIViewController, UITableViewDataSourcePrefetching {
         tableView.delegate = carAdapter
         tableView.dataSource = carAdapter
         tableView.addSubview(refreshControl)
-        tableView.prefetchDataSource = self
         refreshControl.addTarget(self, action: #selector(refreshCarList(_:)), for: .valueChanged)
     }
     
@@ -100,11 +99,6 @@ class ViewController : UIViewController, UITableViewDataSourcePrefetching {
     @IBAction func onOrderChanged(_ sender: Any) {
         ascendingOrder = !ascendingOrder
         queryCars(true)
-    }
-    
-    //TODO Look for ways to improve the prefetch/paging mechanism
-    func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        queryCars()
     }
     
 }
