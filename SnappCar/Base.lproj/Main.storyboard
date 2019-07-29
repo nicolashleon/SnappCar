@@ -74,6 +74,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="countrySegmentedControl" destination="5lE-ai-haG" id="MSy-J5-WzC"/>
                         <outlet property="searchDisplayController" destination="QOJ-NS-USh" id="twr-yk-nbZ"/>
                         <outlet property="sortingSegmentedControl" destination="RY1-M2-puX" id="PCQ-CE-fGO"/>
                         <outlet property="tableView" destination="kVg-ed-7a7" id="WhR-Gm-CRN"/>

@@ -16,9 +16,10 @@ class ViewController : UIViewController {
     private let viewModel = SearchViewModel()
     private let carAdapter = CarItemAdapter()
     private var disposable : Disposable?
+    private var refreshControl = UIRefreshControl()
     private var ascendingOrder : Bool = true
     
-    private var refreshControl = UIRefreshControl()
+    @IBOutlet weak var countrySegmentedControl: UISegmentedControl!
     @IBOutlet weak var sortingSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
@@ -55,7 +56,7 @@ class ViewController : UIViewController {
         
         let sorting : Sorting = Sorting.allCases[sortingSegmentedControl.selectedSegmentIndex]
         
-        disposable = viewModel.searchCars(.NETHERLANDS, sorting, ascendingOrder, ViewController.RESULT_LIMIT, offset)
+        disposable = getCarItemObservable(sorting, offset)
             .subscribe(onNext: { [unowned self] (carItem : CarItem) in
                 self.addCar(carItem)
             }, onError: { [unowned self] (error : Error) in
@@ -67,6 +68,16 @@ class ViewController : UIViewController {
                     self.showEmptyState()
                 }
             })
+    }
+    
+    private func getCarItemObservable(_ sorting : Sorting, _ offset : Int) -> Observable<CarItem> {
+        let index = countrySegmentedControl.selectedSegmentIndex
+        if index < Country.allCases.count {
+            return viewModel.searchCars(Country.allCases[index], sorting, ascendingOrder, ViewController.RESULT_LIMIT, offset)
+        } else {
+            return viewModel.searchCarsByPosition(sorting, ascendingOrder, ViewController.RESULT_LIMIT, offset)
+        }
+        
     }
     
     private func addCar(_ carItem : CarItem) {

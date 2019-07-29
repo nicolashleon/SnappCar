@@ -6,7 +6,7 @@
 //  Copyright © 2019 CarShare. All rights reserved.
 //
 
-enum Country {
+enum Country : CaseIterable {
     
     case NETHERLANDS
     case DEUTSCHLAND
