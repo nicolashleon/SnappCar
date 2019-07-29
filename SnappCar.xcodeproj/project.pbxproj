@@ -33,6 +33,7 @@
 		5992FD7A22EDF04C00B09EE6 /* CarItemAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992FD7922EDF04C00B09EE6 /* CarItemAdapter.swift */; };
 		5992FD7D22EE063700B09EE6 /* CarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992FD7C22EE063700B09EE6 /* CarItemCell.swift */; };
 		59A2F56D22EBDF6B00DE2311 /* CarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A2F56C22EBDF6B00DE2311 /* CarItem.xib */; };
+		59DA565B22EF4DDE0014F37B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59DA565D22EF4DDE0014F37B /* Localizable.strings */; };
 		866CF00B3EEEDEA73172AC10 /* Pods_SnappCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476F51A96A67ED70B22393B9 /* Pods_SnappCar.framework */; };
 		D1692A74FC5EEEF2E5EA4817 /* Pods_SnappCarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742EC10FD3AF8D675CB61F5 /* Pods_SnappCarTests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +91,7 @@
 		5992FD7922EDF04C00B09EE6 /* CarItemAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarItemAdapter.swift; sourceTree = "<group>"; };
 		5992FD7C22EE063700B09EE6 /* CarItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarItemCell.swift; sourceTree = "<group>"; };
 		59A2F56C22EBDF6B00DE2311 /* CarItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarItem.xib; sourceTree = "<group>"; };
+		59DA565C22EF4DDE0014F37B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3E0477DFAFFB1B080E2D539 /* Pods_SnappCarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnappCarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2B5246CBA750F4E2EC68C1 /* Pods-SnappCarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnappCarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnappCarTests/Pods-SnappCarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C13A9CB996FFAB3A121710F9 /* Pods-SnappCarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnappCarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnappCarTests/Pods-SnappCarTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				59A2F56C22EBDF6B00DE2311 /* CarItem.xib */,
 				596ABCF422E8AA05007CB966 /* Assets.xcassets */,
 				596ABCF922E8AA05007CB966 /* Info.plist */,
+				59DA565D22EF4DDE0014F37B /* Localizable.strings */,
 			);
 			path = SnappCar;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DA565B22EF4DDE0014F37B /* Localizable.strings in Resources */,
 				596ABCF822E8AA05007CB966 /* LaunchScreen.storyboard in Resources */,
 				59A2F56D22EBDF6B00DE2311 /* CarItem.xib in Resources */,
 				596ABCF522E8AA05007CB966 /* Assets.xcassets in Resources */,
@@ -582,6 +586,14 @@
 				596ABCF722E8AA05007CB966 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		59DA565D22EF4DDE0014F37B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59DA565C22EF4DDE0014F37B /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

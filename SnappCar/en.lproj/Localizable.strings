@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  SnappCar
+
+  Created by Nicolas Hurtado on 7/29/19.
+  Copyright © 2019 CarShare. All rights reserved.
+*/
+
+//Car List Screen
+"txt_empty_car_query" = "We are sorry but there are no results for your search. Please change the criteria and try again";
+
+"txt_error_car_query" = "There is an error fetching your results! Please pull to refresh to try again";

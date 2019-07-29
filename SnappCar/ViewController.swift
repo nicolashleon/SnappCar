@@ -79,12 +79,12 @@ class ViewController : UIViewController {
     }
     
     private func showEmptyState() {
-        //tableView.setMessage(String.getLocalizedString(key: "txt_empty_item_add_rides"))
+        tableView.setMessage(String.getLocalizedString(key: "txt_empty_car_query"))
     }
     
     private func showError(_ error : Error) {
         print(error)
-        //tableView.setMessage(String.getLocalizedString(key: "txt_error_item_ride_list"))
+        tableView.setMessage(String.getLocalizedString(key: "txt_error_car_query"))
     }
     
     private func finishRefreshControl() {

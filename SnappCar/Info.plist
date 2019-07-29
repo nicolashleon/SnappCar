@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>TIMEOUT_SECONDS</key>
+	<integer>30</integer>
 	<key>URL_CAR_QUERY</key>
 	<string>https://api.snappcar.nl/v2/search/query</string>
 	<key>CFBundleDevelopmentRegion</key>

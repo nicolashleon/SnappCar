@@ -34,7 +34,7 @@ class CarItemAdapter : NSObject, UITableViewDelegate, UITableViewDataSource {
         
         if let rating = carItem.rating {
             cell.ratingView?.rating = rating
-            cell.ratingView?.text = "\((String(carItem.reviewCount)))"
+            cell.ratingView?.text = String(carItem.reviewCount)
         } else {
             cell.ratingView?.isHidden = true
         }
