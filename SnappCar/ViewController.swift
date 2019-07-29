@@ -11,15 +11,15 @@ import RxSwift
 
 class ViewController : UIViewController {
 
+    private static let RESULT_LIMIT = 10
+    
     private let viewModel = SearchViewModel()
     private let carAdapter = CarItemAdapter()
     private var disposable : Disposable?
     private var ascendingOrder : Bool = true
     
     private var refreshControl = UIRefreshControl()
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var sortingSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var orderButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
@@ -47,7 +47,6 @@ class ViewController : UIViewController {
             tableView.reloadData()
         }
         
-        var resultLimit = 10
         var offset = 0
         
         if !forceRefresh {
@@ -56,7 +55,7 @@ class ViewController : UIViewController {
         
         let sorting : Sorting = Sorting.allCases[sortingSegmentedControl.selectedSegmentIndex]
         
-        disposable = viewModel.searchCars(.NETHERLANDS, sorting, ascendingOrder, resultLimit, offset)
+        disposable = viewModel.searchCars(.NETHERLANDS, sorting, ascendingOrder, ViewController.RESULT_LIMIT, offset)
             .subscribe(onNext: { [unowned self] (carItem : CarItem) in
                 self.addCar(carItem)
             }, onError: { [unowned self] (error : Error) in

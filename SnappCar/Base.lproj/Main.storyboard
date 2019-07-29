@@ -18,21 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Location" showsSearchResultsButton="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sw0-Sj-ef1">
-                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="414" id="YGs-c4-qJb"/>
-                                </constraints>
-                                <color key="barTintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <scopeButtonTitles>
-                                    <string>Title</string>
-                                    <string>Title</string>
-                                </scopeButtonTitles>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fi0-yV-V3T"/>
-                                </connections>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kVg-ed-7a7">
                                 <rect key="frame" x="1" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -59,14 +44,23 @@
                                     <action selector="onSortingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="FBZ-EO-JgT"/>
                                 </connections>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5lE-ai-haG">
+                                <rect key="frame" x="11" y="60" width="389" height="29"/>
+                                <segments>
+                                    <segment title="NL"/>
+                                    <segment title="DE"/>
+                                    <segment title="DK"/>
+                                    <segment title="SE"/>
+                                    <segment title="" image="ic_my_location"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kVg-ed-7a7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Drf-Ml-qYX"/>
-                            <constraint firstItem="sw0-Sj-ef1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="FLL-pB-sEW"/>
-                            <constraint firstItem="RY1-M2-puX" firstAttribute="top" secondItem="sw0-Sj-ef1" secondAttribute="bottom" constant="5" id="GZo-Tg-0fX"/>
+                            <constraint firstItem="PfT-0h-y7w" firstAttribute="top" secondItem="5lE-ai-haG" secondAttribute="bottom" constant="17" id="L4Y-cI-hiN"/>
+                            <constraint firstItem="5lE-ai-haG" firstAttribute="trailing" secondItem="PfT-0h-y7w" secondAttribute="trailing" id="MTs-tj-dNX"/>
                             <constraint firstItem="PfT-0h-y7w" firstAttribute="leading" secondItem="RY1-M2-puX" secondAttribute="trailing" constant="23" id="NO0-5u-Uua"/>
-                            <constraint firstItem="sw0-Sj-ef1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a1U-fv-MhX"/>
                             <constraint firstItem="kVg-ed-7a7" firstAttribute="top" secondItem="RY1-M2-puX" secondAttribute="bottom" constant="15" id="g8v-U4-Ctz"/>
                             <constraint firstItem="RY1-M2-puX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="11" id="h45-KJ-GfG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PfT-0h-y7w" secondAttribute="trailing" constant="14" id="hEA-sf-VTu"/>
@@ -74,7 +68,8 @@
                             <constraint firstItem="RY1-M2-puX" firstAttribute="top" secondItem="PfT-0h-y7w" secondAttribute="top" id="luv-L2-g2U"/>
                             <constraint firstItem="kVg-ed-7a7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="1" id="oVG-br-DB9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kVg-ed-7a7" secondAttribute="trailing" constant="-21" id="ofg-K7-tdy"/>
-                            <constraint firstItem="sw0-Sj-ef1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tRH-fI-vdc"/>
+                            <constraint firstItem="5lE-ai-haG" firstAttribute="leading" secondItem="RY1-M2-puX" secondAttribute="leading" id="qZB-6I-NBh"/>
+                            <constraint firstItem="5lE-ai-haG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="qtG-PT-ret"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -88,7 +83,6 @@
                 <searchDisplayController id="QOJ-NS-USh">
                     <connections>
                         <outlet property="delegate" destination="BYZ-38-t0r" id="f1q-Tl-xRd"/>
-                        <outlet property="searchBar" destination="sw0-Sj-ef1" id="vlz-Ol-Rr8"/>
                         <outlet property="searchContentsController" destination="BYZ-38-t0r" id="lqc-NC-gH7"/>
                         <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="I4Q-ed-G9a"/>
                         <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="TKt-tv-DLD"/>
@@ -99,6 +93,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_my_location" width="18" height="18"/>
         <image name="ic_swap" width="18" height="18"/>
     </resources>
 </document>
