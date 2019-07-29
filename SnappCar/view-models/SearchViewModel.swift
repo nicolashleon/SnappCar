@@ -10,13 +10,18 @@ import RxSwift
 
 class SearchViewModel {
     
+    private static let TIMEOUT = Bundle.main.object(forInfoDictionaryKey: "TIMEOUT_SECONDS") as! Int
     private let carRepository : CarRepository = CarRepository()
     
     func searchCars(_ withCountry: Country, _ sortingBy: Sorting, _ ascendingResults: Bool, _ limitResultsTo: Int, _ offset: Int) -> Observable<CarItem> {
-        let timeout = Bundle.main.object(forInfoDictionaryKey: "TIMEOUT_SECONDS") as! Int
+       
         return carRepository.searchCars(withCountry, sortingBy, ascendingResults, limitResultsTo, offset)
-            .timeout(RxTimeInterval.seconds(timeout), scheduler: ConcurrentMainScheduler.instance)
+            .timeout(RxTimeInterval.seconds(SearchViewModel.TIMEOUT), scheduler: ConcurrentMainScheduler.instance)
             .observeOn(MainScheduler.instance)
             .subscribeOn(ConcurrentMainScheduler.instance)
+    }
+    
+    func searchCarsByPosition(_ lat : Double, _ lng : Double, _ sortingBy: Sorting, _ ascendingResults: Bool, _ limitResultsTo: Int, _ offset: Int) -> Observable<CarItem> {
+        return Observable.empty()
     }
 }

@@ -75,7 +75,8 @@ class ViewController : UIViewController {
         if index < Country.allCases.count {
             return viewModel.searchCars(Country.allCases[index], sorting, ascendingOrder, ViewController.RESULT_LIMIT, offset)
         } else {
-            return viewModel.searchCarsByPosition(sorting, ascendingOrder, ViewController.RESULT_LIMIT, offset)
+            //TODO update this code to handle location
+            return viewModel.searchCarsByPosition(0, 0, sorting, ascendingOrder, ViewController.RESULT_LIMIT, offset)
         }
         
     }
