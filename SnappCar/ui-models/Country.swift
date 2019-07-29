@@ -15,10 +15,10 @@ enum Country : CaseIterable {
     
     func abbreviation() -> String {
         switch self {
-        case .NETHERLANDS: return "NL"
-        case .DEUTSCHLAND: return "DE"
-        case .DENMARK: return "DK"
-        case .SWEDEN: return "SE"
+            case .NETHERLANDS: return "NL"
+            case .DEUTSCHLAND: return "DE"
+            case .DENMARK: return "DK"
+            case .SWEDEN: return "SE"
         }
     }
 }

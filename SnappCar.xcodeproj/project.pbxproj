@@ -23,7 +23,7 @@
 		5963EE9C22EB92CA00678ABE /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963EE9B22EB92CA00678ABE /* CarRepository.swift */; };
 		5963EE9F22EB97C000678ABE /* ProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963EE9E22EB97C000678ABE /* ProviderError.swift */; };
 		596ABCEE22E8AA03007CB966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ABCED22E8AA03007CB966 /* AppDelegate.swift */; };
-		596ABCF022E8AA03007CB966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ABCEF22E8AA03007CB966 /* ViewController.swift */; };
+		596ABCF022E8AA03007CB966 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ABCEF22E8AA03007CB966 /* SearchViewController.swift */; };
 		596ABCF322E8AA03007CB966 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ABCF122E8AA03007CB966 /* Main.storyboard */; };
 		596ABCF522E8AA05007CB966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596ABCF422E8AA05007CB966 /* Assets.xcassets */; };
 		596ABCF822E8AA05007CB966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ABCF622E8AA05007CB966 /* LaunchScreen.storyboard */; };
@@ -76,7 +76,7 @@
 		5963EE9E22EB97C000678ABE /* ProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderError.swift; sourceTree = "<group>"; };
 		596ABCEA22E8AA03007CB966 /* SnappCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnappCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		596ABCED22E8AA03007CB966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		596ABCEF22E8AA03007CB966 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		596ABCEF22E8AA03007CB966 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		596ABCF222E8AA03007CB966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		596ABCF422E8AA05007CB966 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		596ABCF722E8AA05007CB966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 				5963EE9A22EB927D00678ABE /* repository */,
 				597AA2C922ECB16B00489536 /* Extensions.swift */,
 				596ABCED22E8AA03007CB966 /* AppDelegate.swift */,
-				596ABCEF22E8AA03007CB966 /* ViewController.swift */,
+				596ABCEF22E8AA03007CB966 /* SearchViewController.swift */,
 				596ABCF122E8AA03007CB966 /* Main.storyboard */,
 				596ABCF622E8AA05007CB966 /* LaunchScreen.storyboard */,
 				59A2F56C22EBDF6B00DE2311 /* CarItem.xib */,
@@ -524,7 +524,7 @@
 				5992FD7A22EDF04C00B09EE6 /* CarItemAdapter.swift in Sources */,
 				5904254F22EA32B800AA0440 /* NetworkCarDataProvider.swift in Sources */,
 				5963EE9722EB66B700678ABE /* PriceInformation.swift in Sources */,
-				596ABCF022E8AA03007CB966 /* ViewController.swift in Sources */,
+				596ABCF022E8AA03007CB966 /* SearchViewController.swift in Sources */,
 				5963EE9622EB66B700678ABE /* CarQueryResult.swift in Sources */,
 				5963EE9422EB66B700678ABE /* Flags.swift in Sources */,
 				5963EE9822EB66B700678ABE /* Result.swift in Sources */,

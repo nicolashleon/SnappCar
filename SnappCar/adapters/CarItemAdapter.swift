@@ -52,7 +52,7 @@ class CarItemAdapter : NSObject, UITableViewDelegate, UITableViewDataSource {
     }
     
     func isEmpty() -> Bool {
-        return data.count == 0
+        return data.isEmpty
     }
     
     func count() -> Int {

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class ViewController : UIViewController {
+class SearchViewController : UIViewController {
 
     private static let RESULT_LIMIT = 10
     
@@ -36,6 +36,7 @@ class ViewController : UIViewController {
         disposable?.dispose()
     }
     
+    //TODO simplify this logic and make it easier to include pagination for the query results.
     private func queryCars(_ forceRefresh : Bool = false) {
         
         if !self.refreshControl.isRefreshing && forceRefresh {
@@ -73,10 +74,10 @@ class ViewController : UIViewController {
     private func getCarItemObservable(_ sorting : Sorting, _ offset : Int) -> Observable<CarItem> {
         let index = countrySegmentedControl.selectedSegmentIndex
         if index < Country.allCases.count {
-            return viewModel.searchCars(Country.allCases[index], sorting, ascendingOrder, ViewController.RESULT_LIMIT, offset)
+            return viewModel.searchCars(Country.allCases[index], sorting, ascendingOrder, SearchViewController.RESULT_LIMIT, offset)
         } else {
             //TODO update this code to handle location
-            return viewModel.searchCarsByPosition(0, 0, sorting, ascendingOrder, ViewController.RESULT_LIMIT, offset)
+            return viewModel.searchCarsByPosition(0, 0, sorting, ascendingOrder, SearchViewController.RESULT_LIMIT, offset)
         }
         
     }
