@@ -6,10 +6,11 @@ target 'SnappCar' do
   use_frameworks!
 
   # Pods for SnappCar
-
+  pod 'AlamofireImage', '~> 3.5'
   pod 'RxAlamofire', '~> 5.0'
   pod 'RxSwift',    '~> 5.0'
   pod 'RxCocoa',    '~> 5.0'
+  pod 'Cosmos', '~> 19.0'
 
   target 'SnappCarTests' do
     inherit! :search_paths

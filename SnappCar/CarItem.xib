@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CarItemCell" customModule="SnappCar" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="347" id="04M-at-pGB" customClass="CarItemCell" customModule="SnappCar" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="347"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="04M-at-pGB" id="mHJ-wd-RgQ">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="346.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LGi-bo-K3v">
+                        <rect key="frame" x="0.0" y="17" width="414" height="220"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tesla 3" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3S-P9-06W">
+                        <rect key="frame" x="31" y="256" width="60" height="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="35 EUR" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAN-Zs-xea">
+                        <rect key="frame" x="322" y="249" width="63" height="21"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Utrecht, Netherlands (10 Km)" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAA-39-uV3">
+                        <rect key="frame" x="31" y="274" width="167" height="27"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="27" id="2Sc-fG-yTJ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nd2-Xg-ZOU" customClass="CosmosView" customModule="Cosmos">
+                        <rect key="frame" x="31" y="303" width="143" height="20"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="(3)"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="per day" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1z2-F2-LK2">
+                        <rect key="frame" x="322" y="270" width="42.5" height="19"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="LGi-bo-K3v" secondAttribute="trailing" id="1uo-0Q-Gdt"/>
+                    <constraint firstItem="RAA-39-uV3" firstAttribute="leading" secondItem="q3S-P9-06W" secondAttribute="leading" id="3Zk-K2-cZO"/>
+                    <constraint firstItem="q3S-P9-06W" firstAttribute="top" secondItem="LGi-bo-K3v" secondAttribute="bottom" constant="19" id="5qR-9w-Lz5"/>
+                    <constraint firstAttribute="trailing" secondItem="1z2-F2-LK2" secondAttribute="trailing" constant="49.5" id="9Ge-RT-SPK"/>
+                    <constraint firstItem="LGi-bo-K3v" firstAttribute="top" secondItem="mHJ-wd-RgQ" secondAttribute="top" constant="17" id="JBa-4n-MxX"/>
+                    <constraint firstAttribute="bottom" secondItem="1z2-F2-LK2" secondAttribute="bottom" constant="57.5" id="LxB-2l-sdd"/>
+                    <constraint firstItem="nd2-Xg-ZOU" firstAttribute="firstBaseline" secondItem="RAA-39-uV3" secondAttribute="baseline" constant="5" id="MD5-E6-l1p"/>
+                    <constraint firstItem="RAA-39-uV3" firstAttribute="leading" secondItem="nd2-Xg-ZOU" secondAttribute="leading" id="OEN-ia-IQm"/>
+                    <constraint firstItem="LGi-bo-K3v" firstAttribute="leading" secondItem="mHJ-wd-RgQ" secondAttribute="leading" id="TXY-Cw-145"/>
+                    <constraint firstItem="lAN-Zs-xea" firstAttribute="top" secondItem="LGi-bo-K3v" secondAttribute="bottom" constant="12" id="YiH-zm-8hF"/>
+                    <constraint firstItem="1z2-F2-LK2" firstAttribute="firstBaseline" secondItem="lAN-Zs-xea" secondAttribute="baseline" constant="16" symbolType="layoutAnchor" id="d3W-VM-vMb"/>
+                    <constraint firstItem="RAA-39-uV3" firstAttribute="leading" secondItem="mHJ-wd-RgQ" secondAttribute="leadingMargin" constant="11" id="fZb-Jj-MGV"/>
+                    <constraint firstAttribute="bottom" secondItem="lAN-Zs-xea" secondAttribute="bottom" constant="76.5" id="lM7-27-mk3"/>
+                    <constraint firstItem="1z2-F2-LK2" firstAttribute="leading" secondItem="mHJ-wd-RgQ" secondAttribute="leading" constant="322" id="ohn-mY-UhD"/>
+                    <constraint firstItem="RAA-39-uV3" firstAttribute="firstBaseline" secondItem="q3S-P9-06W" secondAttribute="baseline" constant="12" id="z5b-29-A9V"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="lAN-Zs-xea" secondAttribute="trailing" constant="9" id="zXi-PN-d4I"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="carImageView" destination="LGi-bo-K3v" id="ZR2-KJ-34Q"/>
+                <outlet property="carLabel" destination="q3S-P9-06W" id="i5W-xu-nR5"/>
+                <outlet property="locationLabel" destination="RAA-39-uV3" id="U67-oT-axp"/>
+                <outlet property="priceLabel" destination="lAN-Zs-xea" id="AG3-kc-TOM"/>
+                <outlet property="ratingView" destination="nd2-Xg-ZOU" id="Lt3-rW-Q4H"/>
+            </connections>
+            <point key="canvasLocation" x="134.78260869565219" y="189.84375"/>
+        </tableViewCell>
+    </objects>
+</document>

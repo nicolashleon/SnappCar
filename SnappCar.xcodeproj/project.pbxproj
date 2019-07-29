@@ -9,7 +9,11 @@
 /* Begin PBXBuildFile section */
 		27E42DD062D1EF294E1E82B9 /* Pods_SnappCarUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3E0477DFAFFB1B080E2D539 /* Pods_SnappCarUITests.framework */; };
 		5904254F22EA32B800AA0440 /* NetworkCarDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5904254E22EA32B800AA0440 /* NetworkCarDataProvider.swift */; };
+		59046AB422EBCF62009DB932 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59046AB322EBCF62009DB932 /* SearchViewModel.swift */; };
 		592FB93E22E8B87900DE7F3F /* CarDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592FB93D22E8B87900DE7F3F /* CarDataProvider.swift */; };
+		5931A1D822EBF74F005E5F57 /* CarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931A1D722EBF74F005E5F57 /* CarItem.swift */; };
+		5931A1DA22EBF868005E5F57 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931A1D922EBF868005E5F57 /* Country.swift */; };
+		5931A1DC22EBF881005E5F57 /* Sorting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5931A1DB22EBF881005E5F57 /* Sorting.swift */; };
 		5963EE9422EB66B700678ABE /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963EE8E22EB66B600678ABE /* Flags.swift */; };
 		5963EE9522EB66B700678ABE /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963EE8F22EB66B600678ABE /* Car.swift */; };
 		5963EE9622EB66B700678ABE /* CarQueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963EE9022EB66B600678ABE /* CarQueryResult.swift */; };
@@ -18,14 +22,18 @@
 		5963EE9922EB66B700678ABE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963EE9322EB66B700678ABE /* User.swift */; };
 		5963EE9C22EB92CA00678ABE /* CarRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963EE9B22EB92CA00678ABE /* CarRepository.swift */; };
 		5963EE9F22EB97C000678ABE /* ProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963EE9E22EB97C000678ABE /* ProviderError.swift */; };
-		5963EEA122EB9AAF00678ABE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5963EEA022EB9AAF00678ABE /* Response.swift */; };
 		596ABCEE22E8AA03007CB966 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ABCED22E8AA03007CB966 /* AppDelegate.swift */; };
-		596ABCF022E8AA03007CB966 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ABCEF22E8AA03007CB966 /* ViewController.swift */; };
+		596ABCF022E8AA03007CB966 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ABCEF22E8AA03007CB966 /* SearchViewController.swift */; };
 		596ABCF322E8AA03007CB966 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ABCF122E8AA03007CB966 /* Main.storyboard */; };
 		596ABCF522E8AA05007CB966 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 596ABCF422E8AA05007CB966 /* Assets.xcassets */; };
 		596ABCF822E8AA05007CB966 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 596ABCF622E8AA05007CB966 /* LaunchScreen.storyboard */; };
 		596ABD0322E8AA05007CB966 /* SnappCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ABD0222E8AA05007CB966 /* SnappCarTests.swift */; };
 		596ABD0E22E8AA05007CB966 /* SnappCarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596ABD0D22E8AA05007CB966 /* SnappCarUITests.swift */; };
+		597AA2CA22ECB16B00489536 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597AA2C922ECB16B00489536 /* Extensions.swift */; };
+		5992FD7A22EDF04C00B09EE6 /* CarItemAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992FD7922EDF04C00B09EE6 /* CarItemAdapter.swift */; };
+		5992FD7D22EE063700B09EE6 /* CarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5992FD7C22EE063700B09EE6 /* CarItemCell.swift */; };
+		59A2F56D22EBDF6B00DE2311 /* CarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A2F56C22EBDF6B00DE2311 /* CarItem.xib */; };
+		59DA565B22EF4DDE0014F37B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 59DA565D22EF4DDE0014F37B /* Localizable.strings */; };
 		866CF00B3EEEDEA73172AC10 /* Pods_SnappCar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476F51A96A67ED70B22393B9 /* Pods_SnappCar.framework */; };
 		D1692A74FC5EEEF2E5EA4817 /* Pods_SnappCarTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0742EC10FD3AF8D675CB61F5 /* Pods_SnappCarTests.framework */; };
 /* End PBXBuildFile section */
@@ -53,7 +61,11 @@
 		476F51A96A67ED70B22393B9 /* Pods_SnappCar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnappCar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		525F64646D81EE9A5A8CA0F2 /* Pods-SnappCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnappCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnappCar/Pods-SnappCar.release.xcconfig"; sourceTree = "<group>"; };
 		5904254E22EA32B800AA0440 /* NetworkCarDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCarDataProvider.swift; sourceTree = "<group>"; };
+		59046AB322EBCF62009DB932 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		592FB93D22E8B87900DE7F3F /* CarDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataProvider.swift; sourceTree = "<group>"; };
+		5931A1D722EBF74F005E5F57 /* CarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarItem.swift; sourceTree = "<group>"; };
+		5931A1D922EBF868005E5F57 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		5931A1DB22EBF881005E5F57 /* Sorting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sorting.swift; sourceTree = "<group>"; };
 		5963EE8E22EB66B600678ABE /* Flags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
 		5963EE8F22EB66B600678ABE /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		5963EE9022EB66B600678ABE /* CarQueryResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarQueryResult.swift; sourceTree = "<group>"; };
@@ -62,10 +74,9 @@
 		5963EE9322EB66B700678ABE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5963EE9B22EB92CA00678ABE /* CarRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRepository.swift; sourceTree = "<group>"; };
 		5963EE9E22EB97C000678ABE /* ProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderError.swift; sourceTree = "<group>"; };
-		5963EEA022EB9AAF00678ABE /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		596ABCEA22E8AA03007CB966 /* SnappCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnappCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		596ABCED22E8AA03007CB966 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		596ABCEF22E8AA03007CB966 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		596ABCEF22E8AA03007CB966 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		596ABCF222E8AA03007CB966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		596ABCF422E8AA05007CB966 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		596ABCF722E8AA05007CB966 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,6 +87,11 @@
 		596ABD0922E8AA05007CB966 /* SnappCarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnappCarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		596ABD0D22E8AA05007CB966 /* SnappCarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappCarUITests.swift; sourceTree = "<group>"; };
 		596ABD0F22E8AA05007CB966 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		597AA2C922ECB16B00489536 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5992FD7922EDF04C00B09EE6 /* CarItemAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarItemAdapter.swift; sourceTree = "<group>"; };
+		5992FD7C22EE063700B09EE6 /* CarItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarItemCell.swift; sourceTree = "<group>"; };
+		59A2F56C22EBDF6B00DE2311 /* CarItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarItem.xib; sourceTree = "<group>"; };
+		59DA565C22EF4DDE0014F37B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B3E0477DFAFFB1B080E2D539 /* Pods_SnappCarUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SnappCarUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC2B5246CBA750F4E2EC68C1 /* Pods-SnappCarTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnappCarTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SnappCarTests/Pods-SnappCarTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C13A9CB996FFAB3A121710F9 /* Pods-SnappCarTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SnappCarTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SnappCarTests/Pods-SnappCarTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,9 +133,16 @@
 				5904254E22EA32B800AA0440 /* NetworkCarDataProvider.swift */,
 				5963EE9E22EB97C000678ABE /* ProviderError.swift */,
 				592FB93D22E8B87900DE7F3F /* CarDataProvider.swift */,
-				5963EEA022EB9AAF00678ABE /* Response.swift */,
 			);
 			path = providers;
+			sourceTree = "<group>";
+		};
+		59046AB222EBCF3D009DB932 /* view-models */ = {
+			isa = PBXGroup;
+			children = (
+				59046AB322EBCF62009DB932 /* SearchViewModel.swift */,
+			);
+			path = "view-models";
 			sourceTree = "<group>";
 		};
 		592FB93222E8B50A00DE7F3F /* data-models */ = {
@@ -133,6 +156,16 @@
 				5963EE9322EB66B700678ABE /* User.swift */,
 			);
 			path = "data-models";
+			sourceTree = "<group>";
+		};
+		5931A1D622EBF71D005E5F57 /* ui-models */ = {
+			isa = PBXGroup;
+			children = (
+				5931A1D722EBF74F005E5F57 /* CarItem.swift */,
+				5931A1D922EBF868005E5F57 /* Country.swift */,
+				5931A1DB22EBF881005E5F57 /* Sorting.swift */,
+			);
+			path = "ui-models";
 			sourceTree = "<group>";
 		};
 		5963EE9A22EB927D00678ABE /* repository */ = {
@@ -168,15 +201,22 @@
 		596ABCEC22E8AA03007CB966 /* SnappCar */ = {
 			isa = PBXGroup;
 			children = (
+				5992FD7B22EE062800B09EE6 /* cells */,
+				5992FD7822EDD6F600B09EE6 /* adapters */,
+				5931A1D622EBF71D005E5F57 /* ui-models */,
+				59046AB222EBCF3D009DB932 /* view-models */,
 				592FB93222E8B50A00DE7F3F /* data-models */,
 				5904254D22EA324F00AA0440 /* providers */,
 				5963EE9A22EB927D00678ABE /* repository */,
+				597AA2C922ECB16B00489536 /* Extensions.swift */,
 				596ABCED22E8AA03007CB966 /* AppDelegate.swift */,
-				596ABCEF22E8AA03007CB966 /* ViewController.swift */,
+				596ABCEF22E8AA03007CB966 /* SearchViewController.swift */,
 				596ABCF122E8AA03007CB966 /* Main.storyboard */,
-				596ABCF422E8AA05007CB966 /* Assets.xcassets */,
 				596ABCF622E8AA05007CB966 /* LaunchScreen.storyboard */,
+				59A2F56C22EBDF6B00DE2311 /* CarItem.xib */,
+				596ABCF422E8AA05007CB966 /* Assets.xcassets */,
 				596ABCF922E8AA05007CB966 /* Info.plist */,
+				59DA565D22EF4DDE0014F37B /* Localizable.strings */,
 			);
 			path = SnappCar;
 			sourceTree = "<group>";
@@ -197,6 +237,22 @@
 				596ABD0F22E8AA05007CB966 /* Info.plist */,
 			);
 			path = SnappCarUITests;
+			sourceTree = "<group>";
+		};
+		5992FD7822EDD6F600B09EE6 /* adapters */ = {
+			isa = PBXGroup;
+			children = (
+				5992FD7922EDF04C00B09EE6 /* CarItemAdapter.swift */,
+			);
+			path = adapters;
+			sourceTree = "<group>";
+		};
+		5992FD7B22EE062800B09EE6 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				5992FD7C22EE063700B09EE6 /* CarItemCell.swift */,
+			);
+			path = cells;
 			sourceTree = "<group>";
 		};
 		8BEBB0F56242C3B4C5F854E3 /* Pods */ = {
@@ -330,7 +386,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DA565B22EF4DDE0014F37B /* Localizable.strings in Resources */,
 				596ABCF822E8AA05007CB966 /* LaunchScreen.storyboard in Resources */,
+				59A2F56D22EBDF6B00DE2311 /* CarItem.xib in Resources */,
 				596ABCF522E8AA05007CB966 /* Assets.xcassets in Resources */,
 				596ABCF322E8AA03007CB966 /* Main.storyboard in Resources */,
 			);
@@ -429,6 +487,8 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SnappCar/Pods-SnappCar-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
@@ -439,6 +499,8 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
@@ -457,18 +519,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				5963EE9922EB66B700678ABE /* User.swift in Sources */,
+				597AA2CA22ECB16B00489536 /* Extensions.swift in Sources */,
+				5931A1DC22EBF881005E5F57 /* Sorting.swift in Sources */,
+				5992FD7A22EDF04C00B09EE6 /* CarItemAdapter.swift in Sources */,
 				5904254F22EA32B800AA0440 /* NetworkCarDataProvider.swift in Sources */,
 				5963EE9722EB66B700678ABE /* PriceInformation.swift in Sources */,
-				596ABCF022E8AA03007CB966 /* ViewController.swift in Sources */,
+				596ABCF022E8AA03007CB966 /* SearchViewController.swift in Sources */,
 				5963EE9622EB66B700678ABE /* CarQueryResult.swift in Sources */,
 				5963EE9422EB66B700678ABE /* Flags.swift in Sources */,
 				5963EE9822EB66B700678ABE /* Result.swift in Sources */,
+				5992FD7D22EE063700B09EE6 /* CarItemCell.swift in Sources */,
 				5963EE9C22EB92CA00678ABE /* CarRepository.swift in Sources */,
+				59046AB422EBCF62009DB932 /* SearchViewModel.swift in Sources */,
+				5931A1D822EBF74F005E5F57 /* CarItem.swift in Sources */,
 				5963EE9F22EB97C000678ABE /* ProviderError.swift in Sources */,
 				592FB93E22E8B87900DE7F3F /* CarDataProvider.swift in Sources */,
 				5963EE9522EB66B700678ABE /* Car.swift in Sources */,
 				596ABCEE22E8AA03007CB966 /* AppDelegate.swift in Sources */,
-				5963EEA122EB9AAF00678ABE /* Response.swift in Sources */,
+				5931A1DA22EBF868005E5F57 /* Country.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,6 +586,14 @@
 				596ABCF722E8AA05007CB966 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		59DA565D22EF4DDE0014F37B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				59DA565C22EF4DDE0014F37B /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
