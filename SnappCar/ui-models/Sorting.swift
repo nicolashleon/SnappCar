@@ -6,7 +6,7 @@
 //  Copyright © 2019 CarShare. All rights reserved.
 //
 
-enum Sorting : String {
+enum Sorting : String, CaseIterable {
     case recommended
     case price
     case distance

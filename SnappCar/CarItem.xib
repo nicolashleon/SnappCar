@@ -43,11 +43,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nd2-Xg-ZOU" customClass="CosmosView" customModule="Cosmos">
-                        <rect key="frame" x="31" y="303" width="192.5" height="20"/>
+                        <rect key="frame" x="31" y="303" width="143" height="20"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="updateOnTouch" value="NO"/>
-                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="(3 reviews)"/>
+                            <userDefinedRuntimeAttribute type="string" keyPath="text" value="(3)"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="per day" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1z2-F2-LK2">

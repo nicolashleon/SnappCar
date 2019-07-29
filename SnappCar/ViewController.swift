@@ -14,6 +14,7 @@ class ViewController : UIViewController {
     private let viewModel = SearchViewModel()
     private let carAdapter = CarItemAdapter()
     private var disposable : Disposable?
+    private var ascendingOrder : Bool = true
     
     private var refreshControl = UIRefreshControl()
     @IBOutlet weak var searchBar: UISearchBar!
@@ -27,6 +28,7 @@ class ViewController : UIViewController {
         tableView.delegate = carAdapter
         tableView.dataSource = carAdapter
         tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshCarList(_:)), for: .valueChanged)
         queryCars()
     }
     
@@ -35,7 +37,18 @@ class ViewController : UIViewController {
     }
     
     private func queryCars() {
-        disposable = viewModel.searchCars(.NETHERLANDS, .recommended, true, 10, 0)
+        
+        if !self.refreshControl.isRefreshing {
+            refreshControl.beginRefreshingManually()
+        }
+        
+        tableView.restore()
+        carAdapter.clear()
+        tableView.reloadData()
+        
+        let sorting : Sorting = Sorting.allCases[sortingSegmentedControl.selectedSegmentIndex]
+        
+        disposable = viewModel.searchCars(.NETHERLANDS, sorting, ascendingOrder, 10, 0)
             .subscribe(onNext: { [unowned self] (carItem : CarItem) in
                 self.addCar(carItem)
             }, onError: { [unowned self] (error : Error) in
@@ -54,6 +67,10 @@ class ViewController : UIViewController {
         self.tableView.reloadData()
     }
     
+    @objc private func refreshCarList(_ sender: Any) {
+        self.queryCars()
+    }
+    
     private func showEmptyState() {
         //tableView.setMessage(String.getLocalizedString(key: "txt_empty_item_add_rides"))
     }
@@ -67,14 +84,13 @@ class ViewController : UIViewController {
         self.refreshControl.endRefreshing()
     }
     
-    
     @IBAction func onSortingChanged(_ sender: UISegmentedControl) {
-        
+        queryCars()
     }
     
     @IBAction func onOrderChanged(_ sender: Any) {
-    
+        ascendingOrder = !ascendingOrder
+        queryCars()
     }
     
 }
-
