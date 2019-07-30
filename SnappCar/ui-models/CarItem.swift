@@ -8,6 +8,7 @@
 
 import Foundation
 struct CarItem {
+    let carId : String
     let name : String
     let userPictureUrl : String?
     let price : String
@@ -17,7 +18,7 @@ struct CarItem {
     let location : String
     
     init(_ name : String, _ userPictureUrl : String? = nil, _ price : String, _ rating : Double? = nil,
-         _ reviewCount : Int, _ carPictureUrl : String? = nil, _ location : String) {
+         _ reviewCount : Int, _ carPictureUrl : String? = nil, _ location : String, _ carId : String) {
         self.name = name
         self.userPictureUrl = userPictureUrl
         self.price = price
@@ -25,6 +26,7 @@ struct CarItem {
         self.reviewCount = reviewCount
         self.carPictureUrl = carPictureUrl
         self.location = location
+        self.carId = carId
     }
 
 }

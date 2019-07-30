@@ -12,6 +12,7 @@ import UIKit
 class CarItemAdapter : NSObject, UITableViewDelegate, UITableViewDataSource {
     
     private var data : Array<CarItem> = Array()
+    private var dataIds = Dictionary<String, String>()
     
     override init() {
         super.init()
@@ -23,6 +24,7 @@ class CarItemAdapter : NSObject, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CarItemCell.REUSE_IDENTIFIER, for: indexPath) as! CarItemCell
+        
         let carItem = data[indexPath.item]
         cell.carImageView?.loadImageSafely(carItem.carPictureUrl, "ic_car_placeholder")
         cell.ownerImageView?.loadImageSafely(carItem.userPictureUrl, "ic_user")
@@ -44,18 +46,23 @@ class CarItemAdapter : NSObject, UITableViewDelegate, UITableViewDataSource {
     
     
     func addCar(_ carItem : CarItem) {
-        data.append(carItem)
+        if dataIds[carItem.carId] == nil {
+            data.append(carItem)
+            dataIds[carItem.carId] = carItem.carId
+        }
     }
     
     func clear() {
         data.removeAll()
+        dataIds.removeAll()
     }
     
     func isEmpty() -> Bool {
-        return data.isEmpty
+        return data.isEmpty && dataIds.isEmpty
     }
     
     func count() -> Int {
         return data.count
     }
+
 }
