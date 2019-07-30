@@ -99,6 +99,7 @@ extension Result {
                 self.car?.reviewAvg,
                 self.car?.reviewCount ?? 0,
                 self.car?.images?.first,
-                location)
+                location,
+                self.ci ?? "")
     }
 }
